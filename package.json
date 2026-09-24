@@ -1,0 +1,42 @@
+{
+  "name": "callbot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI voice agent that calls admitted applicants to confirm whether they will take admission, and produces clean result datasets.",
+  "type": "module",
+  "bin": {
+    "callbot": "src/cli.ts"
+  },
+  "scripts": {
+    "callbot": "tsx src/cli.ts",
+    "cost": "tsx scripts/cost-report.ts",
+    "demo": "tsx src/cli.ts run --input samples/applicants.sample.csv --out out --provider mock",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "voice-agent",
+    "outbound-calls",
+    "admissions",
+    "urdu",
+    "multilingual"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "csv-parse": "^7.0.2",
+    "csv-stringify": "^6.8.3",
+    "exceljs": "^4.4.0",
+    "libphonenumber-js": "^1.13.14",
+    "zod": "^4.6.5"
+  }
+}
