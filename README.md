@@ -16,12 +16,12 @@ Every record includes timestamp, call duration, language used, number of attempt
 
 ## Status
 
-**Progress: 4 of 45 items done, 4 prepared and waiting on university input.** Full checklist: [docs/07-project-plan.md](docs/07-project-plan.md#progress-checklist) · Phase 0 status: [docs/phase-0/README.md](docs/phase-0/README.md).
+**Progress: 5 of 45 items done, 8 prepared and waiting on university inputs.** Full checklist: [docs/07-project-plan.md](docs/07-project-plan.md#progress-checklist) · [Phase 0 status](docs/phase-0/README.md) · [Phase 1 status & runbook](docs/phase-1/README.md).
 
 | Phase | State |
 |---|---|
 | 0 — Research & Planning | 🟡 4/8 done. Tools and documents for the remaining 4 are ready; waiting on the real export, API keys + recordings, carrier quotes, legal sign-off |
-| 1 — Core Setup | ⬜ |
+| 1 — Core Setup | 🟡 Code complete and tested: Vapi assistants from code, webhook server, provider adapter, call store, Asterisk SBC, test-call tool. Live calls wait for Vapi key, carrier trunk, Twilio |
 | 2 — Conversation Logic | ⬜ (system prompt drafted in `prompts/`) |
 | 3 — Data Pipeline | ⬜ (dataset parser/validator, types and campaign config started) |
 | 4 — Admin Dashboard | ⬜ |
@@ -40,6 +40,10 @@ npm test                 # unit tests                                           
 npm run audit -- <file>  # data-quality report for an applicant export               ✅ works now
 npm run bakeoff -- check # STT/TTS provider bake-off (needs API keys for tts/stt)     ✅ works now
 npm run quotes           # compare carrier quotes (carriers/quotes.csv)              ✅ works now
+npm run vapi:sync -- --dry-run      # build the Sara/Ali Vapi assistants (live: needs VAPI_API_KEY)  ✅
+npm run call:test -- --to 03xx… --provider mock   # one simulated call end to end        ✅
+npm run webhook          # Vapi webhook receiver                                      ✅
+npm run vapi:telephony -- byo-trunk|twilio      # register phone routes in Vapi        ✅
 npm run demo             # simulated campaign on samples/applicants.sample.csv → out/ ⏳ Phase 3
 ```
 
@@ -84,7 +88,7 @@ Any other columns are kept and passed through to the result files. Pakistani num
 ```
 bakeoff/           Phase 0 STT/TTS bake-off: test phrases (7 languages), candidates
 carriers/          carrier quote sheet
-config/            campaign + persona configuration (examples)
+config/            campaign, persona and voice-stack configuration
 docs/              project documentation (docs/phase-0/: Phase 0 deliverables)
 prompts/           in-call agent and post-call classifier prompts
 samples/           synthetic applicant data (never commit real data)
@@ -95,11 +99,13 @@ src/
   language/        supported languages + opening lines
   prompts/         system prompt builder
   campaign/        retry policy, calling windows, campaign runner
-  telephony/       VoiceProvider interface, mock provider, Vapi adapter
+  telephony/       VoiceProvider interface, mock provider, Vapi adapter + webhook server
+  store/           durable call store (JSONL now, Postgres in Phase 3)
   classify/        agent-reported + Claude outcome classification
   output/          result dataset writer
   cost/            cost model
   bakeoff/         STT/TTS adapters + CER/WER metrics
+telephony/sbc/     Asterisk SBC between Vapi and the Pakistani carrier
 test/              unit tests (vitest)
 ```
 

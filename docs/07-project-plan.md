@@ -40,11 +40,11 @@ gantt
 
 **Phase 1 — Core Setup**
 
-9. ⬜ Telephony: local SIP trunk + SBC + Twilio for international numbers
-10. ⬜ Speech-to-text setup (multilingual)
-11. ⬜ Text-to-speech: Sara (female) & Ali (male) voices
-12. ⬜ LLM conversation engine (Vapi assistants + `record_outcome` / `end_call` tools)
-13. ⬜ Voice provider adapter + webhook receiver (saves transcripts & recordings)
+9. 🟡 Telephony: local SIP trunk + SBC + Twilio for international numbers — Asterisk SBC + Vapi trunk/number scripts ready; waiting for carrier trunk, VM, Twilio account
+10. 🟡 Speech-to-text setup (multilingual) — wired (Deepgram flux-general-multi, provisional); final pick after bake-off
+11. 🟡 Text-to-speech: Sara (female) & Ali (male) voices — wired; voice IDs after bake-off
+12. 🟡 LLM conversation engine (Vapi assistants + `record_outcome` / `end_call` tools) — assistants built from code, `npm run vapi:sync` ready; needs Vapi key
+13. ✅ Voice provider adapter + webhook receiver (saves transcripts & recordings) — built and tested; live check with first real call
 
 **Phase 2 — Conversation Logic**
 
@@ -96,7 +96,7 @@ gantt
 44. ⬜ Actual vs. estimated cost
 45. ⬜ Data retention cleanup + next-season backlog
 
-**Progress: 4 of 45 items done, 4 prepared (🟡) and waiting on the university.** Phase 0 details: [phase-0/README.md](phase-0/README.md). Phase 3 groundwork already done: dataset parser/validator (item 20, partial), core types and campaign config.
+**Progress: 5 of 45 items done, 8 prepared (🟡) and waiting on university inputs (data, keys, carrier, legal).** Phase 0: [phase-0/README.md](phase-0/README.md) · Phase 1: [phase-1/README.md](phase-1/README.md). Groundwork for later phases already in place: dataset parser/validator (item 20, partial), opening lines + persona selection (items 14–15, partial), durable call store (item 21, interim).
 
 ---
 

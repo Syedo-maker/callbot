@@ -10,28 +10,74 @@
   "defaultPersonaWhenUnknown": "female",
   "retry": {
     "maxAttempts": 3,
-    "gapsMinutes": [180, 1440],
+    "gapsMinutes": [
+      180,
+      1440
+    ],
     "callbackDefaultGapMinutes": 120
   },
   "callingWindows": {
-    "days": ["mon", "tue", "wed", "thu", "fri", "sat"],
+    "days": [
+      "mon",
+      "tue",
+      "wed",
+      "thu",
+      "fri",
+      "sat"
+    ],
     "windows": [
-      { "start": "10:00", "end": "13:00" },
-      { "start": "15:00", "end": "19:30" }
+      {
+        "start": "10:00",
+        "end": "13:00"
+      },
+      {
+        "start": "15:00",
+        "end": "19:30"
+      }
     ]
   },
   "disclosure": {
     "default": "on_ask",
     "upfrontCountries": [
-      "GB", "US", "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU",
-      "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE",
-      "IS", "LI", "NO"
+      "GB",
+      "US",
+      "AT",
+      "BE",
+      "BG",
+      "HR",
+      "CY",
+      "CZ",
+      "DK",
+      "EE",
+      "FI",
+      "FR",
+      "DE",
+      "GR",
+      "HU",
+      "IE",
+      "IT",
+      "LV",
+      "LT",
+      "LU",
+      "MT",
+      "NL",
+      "PL",
+      "PT",
+      "RO",
+      "SK",
+      "SI",
+      "ES",
+      "SE",
+      "IS",
+      "LI",
+      "NO"
     ]
   },
   "classifier": {
     "minConfidence": 0.7
   },
-  "facts": [
+  "facts": [],
+  "_factsExample": [
     "Fee deadline: 15 October 2026",
     "Orientation: 20 October 2026 at 10 am in the main auditorium",
     "Next step after confirming: pay the fee voucher that was sent by SMS and email"

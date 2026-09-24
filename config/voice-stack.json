@@ -1,0 +1,25 @@
+{
+  "_note": "Phase 1 voice-stack configuration for the Vapi assistants. Values marked VERIFY are provisional until the Phase 0 bake-off (docs/phase-0/0.3-provider-bakeoff.md) picks the winners; Vapi's API validation is the final check (npm run vapi:sync -- --dry-run prints the payloads).",
+  "model": {
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5",
+    "_verify": "VERIFY: provider/model ids accepted by Vapi; pick by latency in the bake-off"
+  },
+  "transcriber": {
+    "provider": "deepgram",
+    "model": "flux-general-multi",
+    "_verify": "VERIFY: Urdu/Punjabi/Sindhi/Pashto support. Alternative: { \"provider\": \"11labs\", \"model\": \"scribe_v2\" }. No 'language' field = automatic language detection"
+  },
+  "voices": {
+    "female": { "provider": "11labs", "voiceId": "TBD_FEMALE_VOICE_ID", "model": "eleven_flash_v2_5" },
+    "male": { "provider": "11labs", "voiceId": "TBD_MALE_VOICE_ID", "model": "eleven_flash_v2_5" }
+  },
+  "silenceTimeoutSeconds": 20,
+  "recordingEnabled": true,
+  "voicemailDetection": true,
+  "phoneNumbers": {
+    "_note": "Vapi phone-number IDs. 'pakistan' = BYO SIP trunk number (university UAN via the SBC); 'international' = Twilio number imported into Vapi.",
+    "pakistan": "env:VAPI_PHONE_NUMBER_ID_PK",
+    "international": "env:VAPI_PHONE_NUMBER_ID_INTL"
+  }
+}

@@ -16,7 +16,11 @@
     "test:watch": "vitest",
     "audit": "tsx scripts/audit-dataset.ts",
     "bakeoff": "tsx scripts/bakeoff.ts",
-    "quotes": "tsx scripts/compare-quotes.ts"
+    "quotes": "tsx scripts/compare-quotes.ts",
+    "vapi:sync": "tsx scripts/vapi-sync.ts",
+    "vapi:telephony": "tsx scripts/vapi-telephony.ts",
+    "call:test": "tsx scripts/test-call.ts",
+    "webhook": "tsx scripts/webhook-server.ts"
   },
   "engines": {
     "node": ">=22"

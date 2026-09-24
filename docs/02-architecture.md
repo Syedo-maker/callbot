@@ -136,11 +136,15 @@ flowchart TD
 |---|---|---|---|
 | Dataset ingest (CSV/XLSX, phone normalization, dedupe) | `src/ingest/` | 3 | ✅ skeleton + tests |
 | Persona selection (Sara/Ali, voice per language) | `src/persona/` | 2 | ✅ |
-| Languages + opening lines | `src/language/` | 2 | ✅ drafts, need native review |
+| Config (campaign, personas, voice stack) with validation | `src/config.ts`, `config/` | 1 | ✅ |
+| Vapi adapter: assistants, calls, end-of-call parsing, webhook server | `src/telephony/vapi/` | 1 | ✅ tested. Live check pending |
+| Durable call store | `src/store/` | 1 | ✅ JSONL. Postgres in Phase 3 |
+| SBC (Asterisk) for the Pakistani trunk | `telephony/sbc/` | 1 | ✅ templates. Deploy pending carrier |
+| Languages + opening lines (7 languages, gendered) | `src/language/` | 2 | ✅ drafts, need native review |
 | System prompt builder | `src/prompts/` + `prompts/` | 2 | ✅ |
 | Calling windows + retry policy | `src/campaign/retryPolicy.ts` | 3 | ✅ |
 | Campaign runner (queue, concurrency, retries) | `src/campaign/campaignRunner.ts` | 3 | ✅ in-memory. Postgres in Phase 3 |
-| Voice provider interface + mock | `src/telephony/` | 1 | ✅ mock. Vapi payload builder ✅. Live webhook ⏳ |
+| Voice provider interface + mock | `src/telephony/` | 1 | ✅ |
 | Outcome classification (agent + Claude) | `src/classify/` | 3 | ✅ |
 | Result dataset writer | `src/output/` | 3 | ✅ |
 | Cost model | `src/cost/` | 0 | ✅ |

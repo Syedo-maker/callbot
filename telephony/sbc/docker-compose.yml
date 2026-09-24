@@ -1,0 +1,14 @@
+# CallBot SBC (Asterisk) — run on a small cloud VM with a static public IP.
+#   cd telephony/sbc && docker compose up -d && docker compose logs -f
+# Uses host networking so SIP and the RTP range need no port mapping. VERIFY the image tag before use,
+# or build your own image from the official Asterisk source.
+services:
+  sbc:
+    image: andrius/asterisk:22
+    container_name: callbot-sbc
+    network_mode: host
+    restart: unless-stopped
+    env_file: ../../.env
+    volumes:
+      - ./asterisk:/templates:ro
+    entrypoint: ["/bin/sh", "/templates/render-and-run.sh"]
