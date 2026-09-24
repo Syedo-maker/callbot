@@ -13,7 +13,8 @@
     "demo": "tsx src/cli.ts run --input samples/applicants.sample.csv --out out --provider mock",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "audit": "tsx scripts/audit-dataset.ts"
   },
   "engines": {
     "node": ">=22"
