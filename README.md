@@ -16,14 +16,18 @@ Every record includes timestamp, call duration, language used, number of attempt
 
 ## Status
 
+**Progress: 4 of 45 items done.** Full checklist: [docs/07-project-plan.md](docs/07-project-plan.md#progress-checklist).
+
 | Phase | State |
 |---|---|
-| 0 — Research & planning | 📄 Docs, cost model, legal notes done. Provider bake-off and carrier quotes pending |
-| 1 — Core voice + telephony | 🧱 Provider interface, mock provider, Vapi payload builder. Live integration pending |
-| 2 — Conversation logic | 🧱 Personas, opening lines (7 languages, need native review), system prompt builder |
-| 3 — Data pipeline | 🧱 Ingest, retry policy + calling windows, campaign runner, classifier, dataset writer (in-memory) |
-| 4 — Dashboard | ⏳ |
-| 5 — Testing & pilot | 🧱 Unit tests in CI. Conversation/load tests and pilot pending |
+| 0 — Research & Planning | 🟡 4/8: docs, cost model, legal research, repo done. Data audit, provider bake-off, carrier quotes, legal sign-off pending |
+| 1 — Core Setup | ⬜ |
+| 2 — Conversation Logic | ⬜ (system prompt drafted in `prompts/`) |
+| 3 — Data Pipeline | ⬜ (types + campaign config started) |
+| 4 — Admin Dashboard | ⬜ |
+| 5 — Testing & Pilot | ⬜ |
+| 6 — Rollout | ⬜ |
+| 7 — Post-Campaign Review | ⬜ |
 
 ## Quick start
 
@@ -31,12 +35,12 @@ Requires Node.js 22+.
 
 ```bash
 npm install
-npm test                 # unit tests
-npm run demo             # simulated campaign on samples/applicants.sample.csv → out/
-npm run cost             # regenerate the cost tables in docs/01-cost-estimate.md
+npm run cost             # regenerate the cost tables in docs/01-cost-estimate.md   ✅ works now
+npm test                 # unit tests                                                ⏳ Phase 3/5
+npm run demo             # simulated campaign on samples/applicants.sample.csv → out/ ⏳ Phase 3
 ```
 
-The demo uses the **mock voice provider**, so no calls are placed and no API keys are needed. If `ANTHROPIC_API_KEY` is set, the demo also runs the Claude post-call classifier on each mock transcript. Otherwise it relies on the outcome the agent reported.
+*Everything below describes the planned CLI (Phase 3).* The demo uses the **mock voice provider**, so no calls are placed and no API keys are needed. If `ANTHROPIC_API_KEY` is set, the demo also runs the Claude post-call classifier on each mock transcript. Otherwise it relies on the outcome the agent reported.
 
 ```bash
 npm run callbot -- validate --input path/to/applicants.xlsx    # check a real export without calling anyone

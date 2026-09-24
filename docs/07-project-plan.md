@@ -26,6 +26,78 @@ gantt
 
 > Dates assume a **5 October 2026** kickoff. Shift them to finish at least **two weeks before** the admission-confirmation window opens.
 
+## Progress checklist
+
+**Phase 0 — Research & Planning**
+1. ✅ Requirements & project documentation (architecture, call script, prompts, privacy)
+2. ✅ Cost estimate & cost model (3 options, USD + PKR)
+3. ✅ Legal & compliance research (PECA, PTA, EU AI Act, UK, Gulf, US)
+4. ✅ GitHub repo `callbot` (public) + README
+5. ⬜ Data audit of a real applicant export
+6. ⬜ Provider bake-off: STT, TTS and LLM tested in 7 languages
+7. ⬜ Carrier quotes (PTCL, Nayatel, Wateen, Jazz) + final budget
+8. ⬜ Legal checklist sign-off by the university
+
+**Phase 1 — Core Setup**
+
+9. ⬜ Telephony: local SIP trunk + SBC + Twilio for international numbers
+10. ⬜ Speech-to-text setup (multilingual)
+11. ⬜ Text-to-speech: Sara (female) & Ali (male) voices
+12. ⬜ LLM conversation engine (Vapi assistants + `record_outcome` / `end_call` tools)
+13. ⬜ Voice provider adapter + webhook receiver (saves transcripts & recordings)
+
+**Phase 2 — Conversation Logic**
+
+14. ⬜ Call script + opening lines in 7 languages (native-speaker review)
+15. ⬜ Gender-based persona (Sara / Ali, gender-correct grammar)
+16. ⬜ Language detection & auto-switch
+17. ⬜ Off-topic handling (2–3 redirects, then polite exit)
+18. ⬜ Call time limits (90 s wrap-up, 120 s hard stop) + silence handling
+19. ⬜ Honest "are you a bot?" answer + safety rules (no OTP/CNIC, opt-out)
+
+**Phase 3 — Data Pipeline**
+
+20. ⬜ Dataset upload & validation (CSV/Excel, phone format, duplicates)
+21. ⬜ Database schema (campaigns, applicants, attempts, outcomes)
+22. ⬜ Campaign orchestrator (queue, calling hours, pause, kill switch)
+23. ⬜ Retry queue (configurable attempts & gaps)
+24. ⬜ Outcome classification (agent report + AI classifier)
+25. ⬜ Result datasets: confirmed, declined, no_answer, escalation, all_calls
+26. ⬜ Recording & transcript storage (encrypted, retention rules)
+
+**Phase 4 — Admin Dashboard**
+
+27. ⬜ Login & roles
+28. ⬜ Dataset upload page
+29. ⬜ Campaign controls (start / pause / kill switch)
+30. ⬜ Live progress view
+31. ⬜ Results & downloads
+32. ⬜ Escalation queue for human follow-up
+
+**Phase 5 — Testing & Pilot**
+
+33. ⬜ Unit tests
+34. ⬜ Conversation tests in each language
+35. ⬜ Classifier accuracy check (200 labelled calls)
+36. ⬜ Load test (10,000 simulated + 300 real test calls)
+37. ⬜ Pilot with 100 real students
+38. ⬜ Go / no-go decision
+
+**Phase 6 — Rollout**
+
+39. ⬜ Wave 1: 1,000 students
+40. ⬜ Wave 2: 4,000 students
+41. ⬜ Wave 3: ~5,000 students + automatic retries
+42. ⬜ Daily human follow-up on escalations
+
+**Phase 7 — Post-Campaign Review**
+
+43. ⬜ Accuracy audit (re-check 200 random calls)
+44. ⬜ Actual vs. estimated cost
+45. ⬜ Data retention cleanup + next-season backlog
+
+**Progress: 4 of 45 items done.** Started but not finished: core types and campaign config for Phase 3 (`src/types.ts`, `config/campaign.example.json`).
+
 ---
 
 ## Phase 0: Research & planning (2 weeks)

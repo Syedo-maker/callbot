@@ -1,0 +1,21 @@
+{
+  "_comment": "Voice IDs are placeholders until the Phase 0 bake-off picks a TTS provider and voices per language.",
+  "female": {
+    "name": "Sara",
+    "nameByLanguage": { "ur": "سارہ", "pa": "سارہ", "sd": "سارا", "ps": "سارا", "ar": "سارة", "hi": "सारा" },
+    "voices": {
+      "default": { "provider": "11labs", "voiceId": "TBD_FEMALE_DEFAULT" },
+      "ur": { "provider": "11labs", "voiceId": "TBD_FEMALE_UR" },
+      "en": { "provider": "11labs", "voiceId": "TBD_FEMALE_EN" }
+    }
+  },
+  "male": {
+    "name": "Ali",
+    "nameByLanguage": { "ur": "علی", "pa": "علی", "sd": "علي", "ps": "علي", "ar": "علي", "hi": "अली" },
+    "voices": {
+      "default": { "provider": "11labs", "voiceId": "TBD_MALE_DEFAULT" },
+      "ur": { "provider": "11labs", "voiceId": "TBD_MALE_UR" },
+      "en": { "provider": "11labs", "voiceId": "TBD_MALE_EN" }
+    }
+  }
+}
