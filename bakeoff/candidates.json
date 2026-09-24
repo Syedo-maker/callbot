@@ -1,0 +1,34 @@
+{
+  "_note": "Candidate providers/voices for the bake-off. Voice IDs and model names must be confirmed in each provider's console before running — marked TBD where they depend on the account. Languages a provider does not support are simply omitted.",
+  "stt": [
+    { "id": "elevenlabs-scribe", "provider": "elevenlabs", "model": "scribe_v2", "languages": ["ur", "en", "pa", "sd", "ps", "ar", "hi"] },
+    { "id": "deepgram-nova3", "provider": "deepgram", "model": "nova-3", "languages": ["ur", "en", "pa", "sd", "ps", "ar", "hi"] }
+  ],
+  "tts": [
+    {
+      "id": "elevenlabs-flash",
+      "provider": "elevenlabs",
+      "model": "eleven_flash_v2_5",
+      "voices": {
+        "female": { "default": "TBD_FEMALE_VOICE_ID" },
+        "male": { "default": "TBD_MALE_VOICE_ID" }
+      },
+      "languages": ["ur", "en", "pa", "sd", "ps", "ar", "hi"]
+    },
+    {
+      "id": "azure-neural",
+      "provider": "azure",
+      "voices": {
+        "female": { "ur": "ur-PK-UzmaNeural", "en": "en-IN-NeerjaNeural", "ps": "ps-AF-LatifaNeural", "ar": "ar-SA-ZariyahNeural", "hi": "hi-IN-SwaraNeural" },
+        "male": { "ur": "ur-PK-AsadNeural", "en": "en-IN-PrabhatNeural", "ps": "ps-AF-GulNawazNeural", "ar": "ar-SA-HamedNeural", "hi": "hi-IN-MadhurNeural" }
+      },
+      "languages": ["ur", "en", "ps", "ar", "hi"]
+    },
+    {
+      "id": "uplift-ai",
+      "provider": "manual",
+      "_note": "Pakistani provider focused on Urdu/regional languages; request API access + pricing, then generate samples manually into bakeoff/out/tts/uplift-ai/.",
+      "languages": ["ur", "pa", "sd", "ps"]
+    }
+  ]
+}

@@ -13,3 +13,7 @@ recordings/
 transcripts/
 *.xlsx
 !samples/*.xlsx
+
+# Phase 0 bake-off: recordings of staff voices and generated audio stay local
+bakeoff/recordings/
+bakeoff/out/
