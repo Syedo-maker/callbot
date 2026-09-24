@@ -2,7 +2,7 @@
 
 | # | Checklist item | Deliverable | Status |
 |---|---|---|---|
-| 1 | Requirements & project documentation | [0.1-requirements.md](0.1-requirements.md) + docs 01–07 | ✅ Done (requirements awaiting sign-off, see Q1–Q13) |
+| 1 | Requirements & project documentation | [0.1-requirements.md](0.1-requirements.md) + docs 01–07 | ✅ Done. Defaults adopted for Q1–Q13 (24 Sep 2026). Q1, Q11 and Q13 still open |
 | 2 | Cost estimate & cost model | [01-cost-estimate.md](../01-cost-estimate.md), `npm run cost` | ✅ Done |
 | 3 | Legal & compliance research | [06-legal-compliance.md](../06-legal-compliance.md) | ✅ Done |
 | 4 | GitHub repo + README | <https://github.com/Syedo-maker/callbot> | ✅ Done |
@@ -15,7 +15,7 @@
 
 | # | Action | Owner | Unblocks |
 |---|---|---|---|
-| 1 | Answer open questions Q1–Q13 and sign the requirements | Director Admissions | Items 1, 5 |
+| 1 | ~~Answer Q1–Q13~~ defaults adopted. Remaining: Q1 (export sample), Q11 (caller ID), Q13 (budget) | Director Admissions | Items 5, 7 |
 | 2 | Run `npm run audit` on the real admissions export (or send an anonymised ≥ 200-row sample) | Admissions + IT | Item 5 |
 | 3 | Create trial accounts and put keys in `.env`: ElevenLabs, Deepgram, Azure Speech, Vapi (+ Retell). Request Uplift AI access | IT | Item 6 |
 | 4 | Native speakers correct `bakeoff/test-phrases.json`, record S1–S8 over the phone, and score the TTS samples | Admissions (volunteer staff/students) | Item 6 |
