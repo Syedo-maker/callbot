@@ -16,11 +16,11 @@ Every record includes timestamp, call duration, language used, number of attempt
 
 ## Status
 
-**Progress: 5 of 45 items done, 8 prepared and waiting on university inputs.** Full checklist: [docs/07-project-plan.md](docs/07-project-plan.md#progress-checklist) · [Phase 0 status](docs/phase-0/README.md) · [Phase 1 status & runbook](docs/phase-1/README.md).
+**Progress: 9 of 45 items done (Phase 0 complete with assumptions), 4 prepared and waiting on keys/carrier.** Full checklist: [docs/07-project-plan.md](docs/07-project-plan.md#progress-checklist) · [Phase 0 status](docs/phase-0/README.md) · [Phase 1 status & runbook](docs/phase-1/README.md).
 
 | Phase | State |
 |---|---|
-| 0 — Research & Planning | 🟡 4/8 done. Tools and documents for the remaining 4 are ready; waiting on the real export, API keys + recordings, carrier quotes, legal sign-off |
+| 0 — Research & Planning | ✅ Done with assumptions ([register](docs/phase-0/README.md#assumptions-register)). Real export, bake-off, quotes and legal signature replace them as they arrive. The legal signature is required before the pilot |
 | 1 — Core Setup | 🟡 Code complete and tested: Vapi assistants from code, webhook server, provider adapter, call store, Asterisk SBC, test-call tool. Live calls wait for Vapi key, carrier trunk, Twilio |
 | 2 — Conversation Logic | ⬜ (system prompt drafted in `prompts/`) |
 | 3 — Data Pipeline | ⬜ (dataset parser/validator, types and campaign config started) |

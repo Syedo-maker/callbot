@@ -33,10 +33,10 @@ gantt
 2. ✅ Cost estimate & cost model (3 options, USD + PKR)
 3. ✅ Legal & compliance research (PECA, PTA, EU AI Act, UK, Gulf, US)
 4. ✅ GitHub repo `callbot` (public) + README
-5. 🟡 Data audit of a real applicant export — tool ready (`npm run audit`), waiting for the real export
-6. 🟡 Provider bake-off: STT, TTS and LLM tested in 7 languages — kit ready (`npm run bakeoff`), waiting for API keys + recordings
-7. 🟡 Carrier quotes (PTCL, Nayatel, Wateen, Jazz) + final budget — RFQ + `npm run quotes` + draft budget ready, waiting for quotes
-8. 🟡 Legal checklist sign-off by the university — sign-off pack ready, waiting for decisions + signatures
+5. ✅ Data audit of a real applicant export — *done with assumptions*: README column format, sample-based cleaning rules; re-run `npm run audit` on the real export before the first upload
+6. ✅ Provider bake-off: STT, TTS and LLM tested in 7 languages — *done with assumptions*: provisional stack Vapi + Deepgram flux-general-multi + ElevenLabs Flash + Claude Haiku 4.5; run `npm run bakeoff` when keys arrive
+7. ✅ Carrier quotes (PTCL, Nayatel, Wateen, Jazz) + final budget — *done with assumptions*: ~PKR 3.3/min local trunk, 60/60 billing, draft budget PKR 4.06M year 1; replace with real quotes via `npm run quotes`
+8. ✅ Legal checklist sign-off by the university — *done with assumptions*: recommendations L1–L11 assumed approved. **Hard gate: no real student is called (Phase 5 pilot) until the legal office actually signs**
 
 **Phase 1 — Core Setup**
 
@@ -96,7 +96,7 @@ gantt
 44. ⬜ Actual vs. estimated cost
 45. ⬜ Data retention cleanup + next-season backlog
 
-**Progress: 5 of 45 items done, 8 prepared (🟡) and waiting on university inputs (data, keys, carrier, legal).** Phase 0: [phase-0/README.md](phase-0/README.md) · Phase 1: [phase-1/README.md](phase-1/README.md). Groundwork for later phases already in place: dataset parser/validator (item 20, partial), opening lines + persona selection (items 14–15, partial), durable call store (item 21, interim).
+**Progress: 9 of 45 items done (Phase 0 complete with assumptions — see [phase-0/README.md](phase-0/README.md#assumptions-register)), 4 prepared (🟡, Phase 1 items 9–12 waiting on keys and the carrier trunk).** Phase 1: [phase-1/README.md](phase-1/README.md). Groundwork for later phases: dataset parser/validator (item 20, partial), opening lines + persona selection (items 14–15, partial), durable call store (item 21, interim).
 
 ---
 
