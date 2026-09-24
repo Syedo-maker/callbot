@@ -16,14 +16,14 @@ Every record includes timestamp, call duration, language used, number of attempt
 
 ## Status
 
-**Progress: 4 of 45 items done.** Full checklist: [docs/07-project-plan.md](docs/07-project-plan.md#progress-checklist).
+**Progress: 4 of 45 items done, 4 prepared and waiting on university input.** Full checklist: [docs/07-project-plan.md](docs/07-project-plan.md#progress-checklist) · Phase 0 status: [docs/phase-0/README.md](docs/phase-0/README.md).
 
 | Phase | State |
 |---|---|
-| 0 — Research & Planning | 🟡 4/8: docs, cost model, legal research, repo done. Data audit, provider bake-off, carrier quotes, legal sign-off pending |
+| 0 — Research & Planning | 🟡 4/8 done. Tools and documents for the remaining 4 are ready; waiting on the real export, API keys + recordings, carrier quotes, legal sign-off |
 | 1 — Core Setup | ⬜ |
 | 2 — Conversation Logic | ⬜ (system prompt drafted in `prompts/`) |
-| 3 — Data Pipeline | ⬜ (types + campaign config started) |
+| 3 — Data Pipeline | ⬜ (dataset parser/validator, types and campaign config started) |
 | 4 — Admin Dashboard | ⬜ |
 | 5 — Testing & Pilot | ⬜ |
 | 6 — Rollout | ⬜ |
@@ -36,7 +36,10 @@ Requires Node.js 22+.
 ```bash
 npm install
 npm run cost             # regenerate the cost tables in docs/01-cost-estimate.md   ✅ works now
-npm test                 # unit tests                                                ⏳ Phase 3/5
+npm test                 # unit tests                                                ✅ works now
+npm run audit -- <file>  # data-quality report for an applicant export               ✅ works now
+npm run bakeoff -- check # STT/TTS provider bake-off (needs API keys for tts/stt)     ✅ works now
+npm run quotes           # compare carrier quotes (carriers/quotes.csv)              ✅ works now
 npm run demo             # simulated campaign on samples/applicants.sample.csv → out/ ⏳ Phase 3
 ```
 
@@ -79,11 +82,13 @@ Any other columns are kept and passed through to the result files. Pakistani num
 ## Repository layout
 
 ```
+bakeoff/           Phase 0 STT/TTS bake-off: test phrases (7 languages), candidates
+carriers/          carrier quote sheet
 config/            campaign + persona configuration (examples)
-docs/              project documentation
+docs/              project documentation (docs/phase-0/: Phase 0 deliverables)
 prompts/           in-call agent and post-call classifier prompts
 samples/           synthetic applicant data (never commit real data)
-scripts/           cost report generator
+scripts/           cost report, data audit, bake-off runner, quote comparison
 src/
   ingest/          CSV/XLSX parsing, validation, phone normalisation, dedupe
   persona/         Sara / Ali selection
@@ -94,6 +99,7 @@ src/
   classify/        agent-reported + Claude outcome classification
   output/          result dataset writer
   cost/            cost model
+  bakeoff/         STT/TTS adapters + CER/WER metrics
 test/              unit tests (vitest)
 ```
 

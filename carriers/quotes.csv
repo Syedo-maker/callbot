@@ -1,0 +1,7 @@
+carrier,product,rate_pkr_per_min_mobile,rate_pkr_per_min_landline,billing_increment_sec,setup_fee_pkr,monthly_rental_pkr,channels_included,extra_channel_pkr_month,uan_caller_id,ai_calling_permitted_in_writing,sip_or_pri,contract_months,quote_date,notes
+EXAMPLE (delete),SIP trunk,3.3,2.5,60,25000,11000,10,1000,yes,yes,SIP,12,2026-10-10,Placeholder row showing the format — replace with real quotes
+PTCL,,,,,,,,,,,,,,
+Nayatel,,,,,,,,,,,,,,
+Wateen,,,,,,,,,,,,,,
+Multinet,,,,,,,,,,,,,,
+Jazz Business,,,,,,,,,,,,,,

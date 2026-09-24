@@ -29,14 +29,14 @@ gantt
 ## Progress checklist
 
 **Phase 0 — Research & Planning**
-1. ✅ Requirements & project documentation (architecture, call script, prompts, privacy)
+1. ✅ Requirements & project documentation (requirements spec, architecture, call script, prompts, privacy)
 2. ✅ Cost estimate & cost model (3 options, USD + PKR)
 3. ✅ Legal & compliance research (PECA, PTA, EU AI Act, UK, Gulf, US)
 4. ✅ GitHub repo `callbot` (public) + README
-5. ⬜ Data audit of a real applicant export
-6. ⬜ Provider bake-off: STT, TTS and LLM tested in 7 languages
-7. ⬜ Carrier quotes (PTCL, Nayatel, Wateen, Jazz) + final budget
-8. ⬜ Legal checklist sign-off by the university
+5. 🟡 Data audit of a real applicant export — tool ready (`npm run audit`), waiting for the real export
+6. 🟡 Provider bake-off: STT, TTS and LLM tested in 7 languages — kit ready (`npm run bakeoff`), waiting for API keys + recordings
+7. 🟡 Carrier quotes (PTCL, Nayatel, Wateen, Jazz) + final budget — RFQ + `npm run quotes` + draft budget ready, waiting for quotes
+8. 🟡 Legal checklist sign-off by the university — sign-off pack ready, waiting for decisions + signatures
 
 **Phase 1 — Core Setup**
 
@@ -96,7 +96,7 @@ gantt
 44. ⬜ Actual vs. estimated cost
 45. ⬜ Data retention cleanup + next-season backlog
 
-**Progress: 4 of 45 items done.** Started but not finished: core types and campaign config for Phase 3 (`src/types.ts`, `config/campaign.example.json`).
+**Progress: 4 of 45 items done, 4 prepared (🟡) and waiting on the university.** Phase 0 details: [phase-0/README.md](phase-0/README.md). Phase 3 groundwork already done: dataset parser/validator (item 20, partial), core types and campaign config.
 
 ---
 

@@ -15,7 +15,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "audit": "tsx scripts/audit-dataset.ts",
-    "bakeoff": "tsx scripts/bakeoff.ts"
+    "bakeoff": "tsx scripts/bakeoff.ts",
+    "quotes": "tsx scripts/compare-quotes.ts"
   },
   "engines": {
     "node": ">=22"
